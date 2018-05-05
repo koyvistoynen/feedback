@@ -47,8 +47,24 @@ $error="no"; //флаг наличия ошибки
 		$posText = trim($posText);
 
 //Проверка правильность имени    
-if(!$posName || strlen($posName)>20 || strlen($posName)<3) {
+if(!$posName || strlen($posName)>15 || strlen($posName)<3) {
 $log.="<li>Неправильно заполнено поле \"Ваше имя\" (3-15 символов)!</li>"; $error="yes"; }
+
+//Проверка правильность фамилии    
+if(!$posName || strlen($posSurname)>15 || strlen($posSurname)<3) {
+	$log.="<li>Неправильно заполнено поле \"Ваша фамилия\" (3-15 символов)!</li>"; $error="yes"; }
+
+//Проверка правильность отчества 
+if(!$posName || strlen($posMiddleName)>15 || strlen($posMiddleName)<3) {
+	$log.="<li>Неправильно заполнено поле \"Ваше отчество\" (3-15 символов)!</li>"; $error="yes"; }
+
+//Проверка правильности телефона
+if(!$posPhone || strlen($posPhone)>15 || strlen($posPhone)<7)) {
+	$log.="<li>Неправильно заполнено поле \"Ваш телефон\" (7-15 символов)!</li>"; $error="yes"; 
+}
+if (!preg_match("/(?:8|\+7)? ?\(?(\d{3})\)? ?(\d{3})[ -]?(\d{2})[ -]?(\d{2})/",$posPhone)) { 
+	$log.="<li>Неправильно заполнено поле \"Телефон\"!</li>"; $error="yes"; }
+
 
 //Проверка email адреса
 function isEmail($posEmail)
@@ -79,9 +95,9 @@ if (empty($posText))
 }
 
 //Проверка длины текста комментария
-if(strlen($posText)>1010)
+if(strlen($posText)>10100)
 {
-	$log .= "<li>Слишком длинный текст, в вашем распоряжении 1000 символов!</li>";
+	$log .= "<li>Слишком длинный текст, в вашем распоряжении 10000 символов!</li>";
 	$error = "yes";
 }
 
