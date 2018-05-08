@@ -46,6 +46,11 @@ $error="no"; //флаг наличия ошибки
 		$posText = stripslashes($posText);
 		$posText = trim($posText);
 
+		$form_appeal = addslashes($_POST['form_appeal']);
+		$form_appeal = htmlspecialchars($form_appeal);
+		$form_appeal = stripslashes($form_appeal);
+		$form_appeal = trim($form_appeal);
+
 //Проверка правильность имени    
 if(!$posName || strlen($posName)>15 || strlen($posName)<3) {
 $log.="<li>Неправильно заполнено поле \"Ваше имя\" (3-15 символов)!</li>"; $error="yes"; }
@@ -59,7 +64,7 @@ if(!$posName || strlen($posMiddleName)>15 || strlen($posMiddleName)<3) {
 	$log.="<li>Неправильно заполнено поле \"Ваше отчество\" (3-15 символов)!</li>"; $error="yes"; }
 
 //Проверка правильности телефона
-if(!$posPhone || strlen($posPhone)>15 || strlen($posPhone)<7)) {
+if(!$posPhone || strlen($posPhone)>15 || strlen($posPhone)<7) {
 	$log.="<li>Неправильно заполнено поле \"Ваш телефон\" (7-15 символов)!</li>"; $error="yes"; 
 }
 if (!preg_match("/(?:8|\+7)? ?\(?(\d{3})\)? ?(\d{3})[ -]?(\d{2})[ -]?(\d{2})/",$posPhone)) { 
@@ -118,9 +123,9 @@ sleep(2);
 if($error=="no")
 {
 //Отправка письма админу о новом комментарии
-$to = "pro.simargl@gmail.com";//Ваш e-mail адрес
+$to = "koyvistoynen@oms.karelia.ru";//Ваш e-mail адрес
 //$mes = "Человек по имени $posName возрастом $posAge отправил Вам сообщение из формы обратной связи Вашего сайта: \n\n$posText";
-$mes = "Фамилия: $posSurname\n Имя: $posName\n Отчество: $posMiddleName\n Возраст: $posAge\n Email: $posEmail\n Почтовый адрес: $posMail\n Телефон: $posPhone\n Сообщение из обратной связи с сайта oms.karelia.ru: \n $posText";
+$mes = "Обращение: $form_appeal\n Фамилия: $posSurname\n Имя: $posName\n Отчество: $posMiddleName\n Возраст: $posAge\n Email: $posEmail\n Почтовый адрес: $posMail\n Телефон: $posPhone\n Сообщение из обратной связи с сайта oms.karelia.ru: \n $posText";
 
 $from = $posEmail;
 $sub = '=?utf-8?B?'.base64_encode('Новое сообщение с обратной связи').'?=';
@@ -136,6 +141,5 @@ echo "1"; //Всё Ok!
 else//если ошибки есть
 { 
 		echo "<p style='font: 13px Verdana;'><font color=#FF3333><strong>Ошибка !</strong></font></p><ul style='list-style: none; font: 11px Verdana; color:#000; border:1px solid #c00; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; background-color:#fff; padding:5px; margin:5px 10px;'>".$log."</ul><br />"; //Нельзя отправлять пустые сообщения
-
 }
 }

@@ -3,18 +3,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-<script type="text/javascript" src="/js/js-form.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script type="text/javascript" src="js/js-form.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <title>Форма обратной связи</title>
 </head>
 
 <body>
 
-
 <center><div align="left" id="cor5" class="sidebarForm">
 <h4>Задать новый вопрос:</h4>
 <div align="center" id='loadBar'></div>
 <form action="#" method="post" id="cForm2">
+
+        <label for="destination">Кому обращение</label>
+        <div class="select" id="cor5">
+            <select id="destination">
+                <option value="general">Руководство ТФОМС РК</option>
+            </select>
+        </div>
+    
+    
+    <label for="form_appeal">Форма обращения </label>
+    <div class="select" id="cor5">
+        <select id="form_appeal">
+            <option value="thanks">Благодарность</option>
+            <option value="question">Вопрос</option>
+            <option value="complaint">Жалоба</option>
+            <option value="message">Сообщение</option>
+        </select>
+    </div>
 
    <label>Ваша фамилия:</label>
    <div class="input" id="cor5">
@@ -31,11 +48,11 @@
    <input value="" id="posMiddleName" type="text" />
    </div>
 
-   <label>Ваше возраст:</label>
+   <label>Дата вашего рождения:</label>
    <div class="input" id="cor5">
-   <input value="" id="posAge" type="text" />
+   <input value="" id="posAge" type="date" />
    </div>
-   
+
    <label>Ваш email:</label>
    <div class="input" id="cor5">
    <input value="" id="posEmail" type="text" />
@@ -52,8 +69,10 @@
    </div>
    
    <label>Ваше сообщение:</label>
-   <div class="textarea" id="cor5"><textarea id="posText"></textarea></div>
+   <div class="textarea" id="cor5">
+   <textarea id="posText"></textarea></div>
    
+<p><input type="checkbox" onchange="document.getElementById('send').disabled = !this.checked">Я ознакомен с <a href="http://oms.karelia.ru/about/person_data.php">Политикой обработки персональных данных в ТФОМС РК</a></p>   
 <button type="button" id="send">Отправить --></button>
 
 </form></div></center>

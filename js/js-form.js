@@ -15,10 +15,11 @@ $("#send").click(function(){
 		var posMail = $("#posMail").val();
 		var posPhone = $("#posPhone").val();
 		var posText = $("#posText").val();
+		var form_appeal = $("#form_appeal").val();
 		$.ajax({
 			type: "POST",
 			url: "../send.php",
-			data: {"posSurname": posSurname, "posName": posName, "posMiddleName": posMiddleName, "posAge": posAge, "posEmail": posEmail, "posMail": posMail, "posPhone": posPhone, "posText": posText},
+			data: {"posSurname": posSurname, "posName": posName, "posMiddleName": posMiddleName, "posAge": posAge, "posEmail": posEmail, "posMail": posMail, "posPhone": posPhone, "posText": posText, "form_appeal": form_appeal},
 			cache: false,
 			success: function(response){
 		var messageResp = "<p style='font-family:Verdana; font-size:11px; color:green; border:1px solid #00CC00; padding:10px; margin:20px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; background-color:#fff;'>Спасибо, <strong>";
@@ -34,6 +35,7 @@ $("#send").click(function(){
 				$("#posMail").val("");
 				$("#posPhone").val("");
 				$("#posText").val("");
+				$("#form_appeal");
 				} else {
 		$("#loadBar").html(response).fadeIn(3000); }
 										}
