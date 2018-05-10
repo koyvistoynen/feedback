@@ -52,8 +52,8 @@
 
 
 .sidebarForm .textarea {
-		height: 70px;
-		width: 320px;
+		height: 200px;
+		width: 450px;
 		overflow: hidden;
 		background: white;
 		border: solid 1px #DFE2E5;
@@ -64,8 +64,8 @@
 }
 
 .sidebarForm .textarea textarea {
-		width: 350px;
-		height: 100px;
+		width: 450px;
+		height: 200px;
 		background: white;
 		border: none;
 		resize:none;
@@ -89,6 +89,16 @@
 		height: 25px;
 		font: 12px Verdana;
 		font-weight: 700;
+		color: #FFFFFF;
+		background-color: #cc0000;
+		padding-bottom: 2px;
+		margin: 5px 0 10px 10px;
+}
+
+.sidebarForm checkbox {
+		border: 2px #ccc solid;
+		width: 150px;
+		height: 250px;
 		color: #FFFFFF;
 		background-color: #cc0000;
 		padding-bottom: 2px;
