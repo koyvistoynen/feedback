@@ -15,7 +15,7 @@
 <div align="center" id='loadBar'></div>
 <form action="#" method="post" id="cForm2">
 
-        <label for="destination">Кому обращение</label>
+        <label for="destination">Кому адресовано обращение:</label>
         <div class="select" id="cor5">
             <select id="destination">
                 <option value="general">Руководство ТФОМС РК</option>
@@ -23,7 +23,7 @@
         </div>
     
     
-    <label for="form_appeal">Форма обращения </label>
+    <label for="form_appeal">Форма обращения:</label>
     <div class="select" id="cor5">
         <select id="form_appeal">
             <option value="Благодарность">Благодарность</option>
@@ -43,7 +43,7 @@
    <input value="" id="posName" type="text" />
    </div>
 
-   <label>Ваше отчество:</label>
+   <label>Ваше отчество (при наличии):</label>
    <div class="input" id="cor5">
    <input value="" id="posMiddleName" type="text" />
    </div>
