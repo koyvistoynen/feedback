@@ -151,7 +151,7 @@ sleep(2);
 if($error=="no")
 {
 //Отправка письма админу о новом комментарии
-$to = "tfoms.rk.oa@yandex.ru";//Ваш e-mail адрес
+$to = "test@test.ru";//Ваш e-mail адрес
 //$mes = "Человек по имени $posName возрастом $posAge отправил Вам сообщение из формы обратной связи Вашего сайта: \n\n$posText";
 //$mes = "Тип обращения: $form_appeal\n Фамилия: $posSurname\n Имя: $posName\n Отчество: $posMiddleName\n Возраст: $posAge\n Email: $posEmail\n Почтовый адрес: $posMail\n Телефон: $posPhone\n Сообщение из обратной связи с сайта oms.karelia.ru: \n $posText";
 $mes = "Я, $posName $posMiddleName $posSurname дата рождения: $posAge, проживающий по адресу: $posMail сообщаю следующее:\n \n <br> <hr>  $posText \n <br> <hr>";
